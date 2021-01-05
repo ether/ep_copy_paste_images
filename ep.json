@@ -20,9 +20,9 @@
       },
       "hooks":{
         "eejsBlock_styles": "ep_copy_paste_images/index",
-        "eejsBlock_timesliderStyles": "ep_copy_paste_images/index"
-      }
+        "eejsBlock_timesliderStyles": "ep_copy_paste_images/index",
+        "getLineHTMLForExport": "ep_copy_paste_images/index"
+		}
     }
   ]
 }
-
