@@ -23,6 +23,7 @@ const _analyzeLine = (alineAttrs, apool) => {
       img = Changeset.opAttributeValue(op, 'img', apool);
     }
   }
+  img = img.replace(/\\/g, '');
   return img;
 };
 
@@ -33,13 +34,11 @@ exports.getLineHTMLForExport = async (hookName, context) => {
     if (context.text.indexOf('*') === 0) {
       context.lineContent = context.lineContent.replace('*', '');
     }
-    const paragraph = context.lineContent.match(/<p([^>]+)?>/);
-    if (paragraph) {
-      context.lineContent = context.lineContent.replace('<p', `<${img} `);
-      context.lineContent = context.lineContent.replace('</p>', `</${img}>`);
-    } else {
-      context.lineContent = `<${img}>${context.lineContent}</${img}>`;
-    }
+	 
+     context.lineContent = `${img} `;
+	 //context.lineContent = context.lineContent.replace(/\\/g, '');
+	 
+    
     return context.lineContent;
   }
 };
