@@ -3,14 +3,14 @@ const Changeset = require('ep_etherpad-lite/static/js/Changeset');
 
 
 exports.eejsBlock_styles = function (hook_name, args, cb) {
-    args.content += "<link href='../static/plugins/ep_copy_paste_images/static/css/ace.css' rel='stylesheet'>";
-    return cb();
+  args.content += "<link href='../static/plugins/ep_copy_paste_images/static/css/ace.css' rel='stylesheet'>";
+  return cb();
 };
 
 exports.eejsBlock_timesliderStyles = function (hook_name, args, cb) {
-    args.content += "<link href='../../static/plugins/ep_copy_paste_images/static/css/ace.css' rel='stylesheet'>";
-    args.content += '<style>.control{display:none}</style>';
-    return cb();
+  args.content += "<link href='../../static/plugins/ep_copy_paste_images/static/css/ace.css' rel='stylesheet'>";
+  args.content += '<style>.control{display:none}</style>';
+  return cb();
 };
 
 
@@ -34,11 +34,11 @@ exports.getLineHTMLForExport = async (hookName, context) => {
     if (context.text.indexOf('*') === 0) {
       context.lineContent = context.lineContent.replace('*', '');
     }
-	 
-     context.lineContent = `${img} `;
-	 //context.lineContent = context.lineContent.replace(/\\/g, '');
-	 
-    
+
+    context.lineContent = `${img} `;
+    //context.lineContent = context.lineContent.replace(/\\/g, '');
+
+
     return context.lineContent;
   }
 };
