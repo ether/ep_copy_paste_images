@@ -2,12 +2,12 @@
 const Changeset = require('ep_etherpad-lite/static/js/Changeset');
 
 
-exports.eejsBlock_styles = function (hook_name, args, cb) {
+exports.eejsBlock_styles = (hookName, args, cb) => {
   args.content += "<link href='../static/plugins/ep_copy_paste_images/static/css/ace.css' rel='stylesheet'>";
   return cb();
 };
 
-exports.eejsBlock_timesliderStyles = function (hook_name, args, cb) {
+exports.eejsBlock_timesliderStyles = (hookName, args, cb) => {
   args.content += "<link href='../../static/plugins/ep_copy_paste_images/static/css/ace.css' rel='stylesheet'>";
   args.content += '<style>.control{display:none}</style>';
   return cb();
