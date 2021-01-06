@@ -23,7 +23,7 @@ const _analyzeLine = (alineAttrs, apool) => {
       img = Changeset.opAttributeValue(op, 'img', apool);
     }
   }
-  img = img.replace(/\\/g, '');
+  img = img.replace(/"/g, "'");
   return img;
 };
 
@@ -36,9 +36,6 @@ exports.getLineHTMLForExport = async (hookName, context) => {
     }
 
     context.lineContent = `${img} `;
-    //context.lineContent = context.lineContent.replace(/\\/g, '');
-
-
     return context.lineContent;
   }
 };
